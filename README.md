@@ -116,6 +116,36 @@ The API will be available at `http://localhost:3000`
    docker-compose down
    ```
 
+## Deployment
+
+### Deploying to Render
+
+1. Fork this repository to your GitHub account
+2. Sign up or log in to [Render](https://render.com)
+3. Click "New+" and select "Web Service"
+4. Connect your GitHub account and select your forked repository
+5. Configure the service:
+   - Name: `lead-scoring-api`
+   - Environment: `Node`
+   - Build command: `npm install`
+   - Start command: `npm start`
+   - Instance type: Free (or select a paid tier for production)
+6. Add environment variables in the "Advanced" section:
+   - `NODE_ENV`: `production`
+   - `PORT`: `10000`
+   - `MONGODB_URI`: Your MongoDB connection string
+   - `AI_PROVIDER`: Your preferred AI provider (`gemini` or `openai`)
+   - `GEMINI_API_KEY`: Your Google Gemini API key (if using Gemini)
+   - `OPENAI_API_KEY`: Your OpenAI API key (if using OpenAI)
+   - `CORS_ORIGIN`: Your frontend URL or `*` for any origin
+7. **Important**: Whitelist Render IPs in MongoDB Atlas:
+   - Go to your MongoDB Atlas dashboard
+   - Select your cluster
+   - Go to "Network Access" 
+   - Add IP Address `0.0.0.0/0` (for testing only - restrict in production)
+8. Click "Create Web Service"
+9. Render will automatically build and deploy your application
+
 ## API Documentation
 
 ### Base URL
