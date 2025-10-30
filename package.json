@@ -1,0 +1,36 @@
+{
+  "name": "lead-scoring-api",
+  "version": "1.0.0",
+  "description": "Backend API for AI-powered lead scoring with rule-based and AI layers",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "nodemon src/server.js",
+    "test": "jest"
+  },
+  "keywords": [
+    "lead-scoring",
+    "ai",
+    "api",
+    "nodejs",
+    "express"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@google/generative-ai": "^0.24.1",
+    "cors": "^2.8.5",
+    "csv-parse": "^5.5.0",
+    "csv-stringify": "^6.4.5",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "express-validator": "^7.0.1",
+    "mongoose": "^8.0.0",
+    "multer": "^1.4.5-lts.1",
+    "openai": "^4.20.1"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0",
+    "nodemon": "^3.0.1"
+  }
+}
